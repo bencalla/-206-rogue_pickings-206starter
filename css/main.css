@@ -44,7 +44,7 @@ p {
 /*The widths are in a percentage!*/
 header {
 	margin: 0 auto;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 }
 
 header h1 {
@@ -63,7 +63,7 @@ header nav ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	justify-content: space-around;
 	align-items: center;
 }
@@ -74,7 +74,7 @@ header nav ul li {
 	display: flex;
 	justify-content: space-around;
 	align-content: center;
-	flex-direction: column;
+	width: 100%;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -85,22 +85,15 @@ header nav ul li a{
 .top-section,
 .bottom-section {
 	margin: 0 auto;
-	flex-flow: column wrap;
-	align-items: stretch;
+	flex-flow: row wrap;
 }
 
-.main-image {
-
-}
 .main-image img {
 	width: 100%;
 	border-bottom: 3px solid #77a466;
 	border-top: 3px solid #77a466;
 }
 
-.main-title {
-
-}
 .main-title h2 {
 	text-align: left;
 	padding: 5px 0;
@@ -116,18 +109,11 @@ header nav ul li a{
 .section-two,
 .section-three {
 	border-top: 1px solid #eee;
+	width: 100%;
 }
 
 .section-one h3 {
 	padding: 10px 0;
-}
-
-.section-two {
-}
-
-.section-two h3,
-.section-three h3 {
-
 }
 
 .menu {
@@ -163,24 +149,13 @@ footer span {
 	font-size: 0.875rem;
 }
 
-@media (min-width: 768px) {
-	body{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
+@media all and (min-width: 768px) {
 	.container{
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		flex-flow: row wrap;
 	}
 
-	header{
-		display: flex;
-		justify-content: center;
-		align-items: center;
+	header nav ul li, header h1{
+		width: 100%;
 	}
 
 	.top-section{
@@ -191,16 +166,65 @@ footer span {
 
 	.bottom-section{
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		justify-content: space-between;
+		align-items: flex-start;
 		flex-flow: row wrap;
 		flex-basis: auto;
+		border-top: 1px solid grey;
+	}
+
+	.section-one, .section-two, .section-three{
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-flow: row wrap;
+		flex-basis: 30%;
+	}
+
+	.section-two{
+		border-left: 1px solid grey;
+		border-right: 1px solid grey;
+	}
+
+	p, h3{
+		padding: 0 30px;
 	}
 
 	footer{
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+}
+
+@media all and (min-width: 1200px) {
+	header{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		margin: 0;
+		width: 100%;
+	}
+
+	header h1 {
+    width: 60%;
+    padding: 0;
+    text-align: left;
+		border: none;
+  }
+
+	header nav{
+		width: 40%;
+	}
+
+	header nav ul{
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	header nav ul li{
+		width: auto;
 	}
 
 }
